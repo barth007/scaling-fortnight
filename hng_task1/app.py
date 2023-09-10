@@ -9,9 +9,9 @@ def current_date_time():
 
 
     now = dt.utcnow()
-    WAT_now = now + timedelta(hours = 1)
-    string = dt.isoformat(WAT_now)
-    return string
+    WAT_now = (now + timedelta(hours = 1)).strftime('%Y-%m-%dT%H:%M:%SZ')
+    #string = dt.isoformat(WAT_now)
+    return WAT_now
 
 
 def current_day():
@@ -25,13 +25,13 @@ def current_day():
 
 
 details = {
-            'slack_name': 'Codeslinger',
-            'current_day': current_day(),
-            'utc_time': current_date_time(),
-            'track': 'backend',
-            'github_file_url': 'https://github.com/barth007/scaling-fortnight/hng_task1/app.py',
-            'github_repo_url': 'https://github.com/barth007/scaling-fortnight',
-            'status_code': 200
+            "slack_name": "Codeslinger",
+            "current_day": current_day(),
+            "utc_time": current_date_time(),
+            "track": "backend",
+            "github_file_url": "https://github.com/barth007/scaling-fortnight/hng_task1/app.py",
+            "github_repo_url": "https://github.com/barth007/scaling-fortnight",
+            "status_code": 200
         }
 
 
@@ -46,7 +46,7 @@ def get_all():
         abort(not_found(404))
     if slack_name is None or track is None:
         abort(bad_request(400))
-    return jsonify({'details': details})
+    return jsonify(details)
 
 
 @app.errorhandler(400)
