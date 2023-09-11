@@ -9,7 +9,7 @@ def current_date_time():
 
 
     now = dt.utcnow()
-    WAT_now = (now).strftime('%Y-%m-%dT%H:%M:%SZ')
+    WAT_now = now.strftime('%Y-%m-%dT%H:%M:%SZ')
     #string = dt.isoformat(WAT_now)
     return WAT_now
 
