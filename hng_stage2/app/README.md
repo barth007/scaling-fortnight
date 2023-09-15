@@ -6,7 +6,7 @@ This documentation provides details about the REST API for managing person recor
 
 ### Create a Person
 
-- **URL:** `/api`
+- **URL:** `https://second-task-sa3c.onrender.com/api`
 - **Method:** `POST`
 - **Request Body:**
   ```json
@@ -29,7 +29,7 @@ This documentation provides details about the REST API for managing person recor
 
 ### Update a Person
 
-URL: /api/{user_id_or_name}
+URL: https://second-task-sa3c.onrender.com//api/{user_id_or_name}
 Method: PUT
 Request Body:
    {
@@ -51,7 +51,7 @@ Request Body:
 
 ### Delete a Person
 
-URL: /api/{user_id_or_name}
+URL: https://second-task-sa3c.onrender.com//api/{user_id_or_name}
 Method: DELETE
 -Response:
 ----Success (200 OK):
@@ -74,15 +74,17 @@ curl -X POST -H "Content-Type: application/json" -d '{"name": "John Doe", "email
 
 
 ### Retrieve a Person
-curl http://localhost:5000/api/1
+curl https://second-task-sa3c.onrender.com//api/1
 
 
 ### Update a person
-curl -X PUT -H "Content-Type: application/json" -d '{"name": "Updated Name"}' http://localhost:5000/api/1
+curl -X PUT -H "Content-Type: application/json" -d '{"name": "Updated Name"}' https://second-task-sa3c.onrender.com//api/1
 
 
 ### Delete a Person
-curl -X DELETE http://localhost:5000/api/1
+curl -X DELETE https://second-task-sa3c.onrender.com//api/1
 
 
 
+
+UML Diagram link: https://drive.google.com/file/d/1m33m9ChzVH7IL5CRdAciMEJ8bVwRUs3B/view?usp=sharing

@@ -5,17 +5,6 @@ from app import db, csrf
 
 
 bp = Blueprint('user', __name__)
-@bp.route('/api', methods=['GET'])
-def get_all():
-    users = User.query.all()
-    all_users = []
-    for user in users:
-        all_users.append({
-            "id":user.id,
-            "name":user.name,
-            "email":user.email
-        })
-    return jsonify(all_users)
 
 
 @bp.route('/api/<param>', methods=['GET'])
@@ -33,6 +22,7 @@ def get_user(param):
             "email":user.email
         }
     return jsonify(response)
+
 
 @bp.route('/api', methods=['POST'])
 @csrf.exempt
@@ -83,6 +73,7 @@ def delete(param):
 @bp.errorhandler(400)
 def bad_request(error, message):
     return make_response(jsonify({'error': message}), 400)
+
 
 @bp.errorhandler(404)
 def not_found(error, message):
