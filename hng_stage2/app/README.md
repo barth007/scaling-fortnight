@@ -17,7 +17,9 @@ This documentation provides details about the REST API for managing person recor
 -Response:
 ----Success (201 Created):
      {
-        "message": "User Created Successfully!"
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@gmail.com" 
      }
 -Error (400 Bad Request):
     {

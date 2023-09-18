@@ -33,7 +33,12 @@ def create_user():
     new_user = User(name=data['name'], email=data['email'])
     db.session.add(new_user)
     db.session.commit()
-    return jsonify({"message":"User Created Sucessfully!"}), 201
+    response = {
+            "id": new_user.id,
+            "name": new_user.name,
+            "email": new_user.email
+        }
+    return jsonify(response), 201
 
 
 @bp.route('/api/<param>', methods=['PUT'])
